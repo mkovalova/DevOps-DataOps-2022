@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: null
+  name: k8s-resources-express-mongo
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              io.kompose.network/k8s-resources-express-mongo: "true"
+  podSelector:
+    matchLabels:
+      io.kompose.network/k8s-resources-express-mongo: "true"
